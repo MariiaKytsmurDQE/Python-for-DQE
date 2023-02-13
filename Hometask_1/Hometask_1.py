@@ -1,6 +1,5 @@
 import random  # importing random module
 
-
 #  Getting 100 numbers from 0 to 1000
 hundred_random_numbers = []  # Create a list
 for _ in range(100):  # Define count of numbers in the list
@@ -25,6 +24,6 @@ for i in sorted_numbers:
         odd_numbers.append(i)  # Append every even number to list 'odd'
         odd_average = round(sum(odd_numbers) / len(odd_numbers))
 
-print('Sorted numbers for min to max: ', sorted_numbers)
+print('Sorted numbers from min to max: ', sorted_numbers)
 print('Average of even numbers: ', even_average)
 print('Average of odd numbers: ', odd_average)
