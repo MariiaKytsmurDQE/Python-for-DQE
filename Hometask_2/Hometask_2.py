@@ -1,25 +1,40 @@
-from random import randint, choice  # importing module.
-from string import ascii_lowercase  # importing module.
+from collections import defaultdict
+import random
+import string
 
 
-dictionary_all_values = {}
-dictionary_max_values = {}
 # Create the list dictionaries from 2 to 10.
-list_with_dictionaries = [{choice(ascii_lowercase): randint(0, 100)
-    for _ in range(len(ascii_lowercase))}  # create keys as lowercase letters.
-    for _ in range(randint(2, 10))]  # create value with random numbers from 0 to 100.
-#  Transform from list of dicts into dict of lists.
-for dictionary in list_with_dictionaries:
-    for key, value in dictionary.items():
-        dictionary_all_values.setdefault(key, []).append(value)
-#  Choose only the biggest one.
-number_of_dict_with_maximum_value = 0
-for key, value in dictionary_all_values.items():
-    if len(value) >= 1:
-        dictionary_max_values[key + "_" + str(value.index(max(value)) + 1)] = max(value)
-    else:
-        dictionary_max_values[key] = value[0]
+def create_dicts():
+    output = []  # Dicts list
+    for dict_number in range(random.randint(2, 10)):  # Dictionary counter
+        dictionary = {}
+        for elem_number in range(random.randint(1, 26)):  # Elements counter
+            # Key(random letter), value(random number from 0 to 100)
+            dictionary[random.choice(string.ascii_lowercase)] = random.randint(0, 100)
+        output.append(dictionary)  # Append every dictionary to the list
+    return output
 
-print('list dictionaries: ', list_with_dictionaries)
-print('dictionary with list of all values for key:', dictionary_all_values)
-print('dictionary with max value:', dictionary_max_values)
+
+output = defaultdict(lambda: float('-inf'))
+
+list_of_dicts = create_dicts()
+
+
+for cntr in range(0, len(list_of_dicts)):  # Create a counter for later adding of '_number_of_dictionary' for the same keys
+    for key, value in list_of_dicts[cntr].items():
+        if output[key] != float('-inf'):  # Check whether value exists previously
+            if output[key] > value:  # If stored value > actual than we do nothing
+                continue
+            del output[key]  # Delete key with max value
+            key = f'{key}_{cntr + 1}'  # Create new key with adding '_number_of_dictionary'
+
+        output[key] = max(output[key], value)  # Add key: value
+
+
+for i in range(0, len(list_of_dicts)):
+    print(f'Dict {i+1}:  {list_of_dicts[i]}')  # Just for better displaying
+print('')
+print('dictionary with max value:', dict(output))
+
+
+
