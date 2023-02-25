@@ -17,7 +17,7 @@ def create_dicts():
 all_values = create_dicts()
 
 
-def all_value_dict():
+def all_values_dict():
     output = {}
     c = 1
     for cntr in all_values:
@@ -30,16 +30,16 @@ def all_value_dict():
     return output
 
 
-all_value_dict = all_value_dict()
+all_values_dict = all_values_dict()
 
 
 def final_dict():
     my_dict = {}
-    for key, value in all_value_dict.items():
-        if len(all_value_dict[key]) == 1:
-            my_dict[key] = max(all_value_dict[key].values())
+    for key, value in all_values_dict.items():
+        if len(all_values_dict[key]) == 1:
+            my_dict[key] = max(all_values_dict[key].values())
         else:
-            my_dict[key + "_" + str(max(all_value_dict[key], key=all_value_dict[key].get))] = max(all_value_dict[
+            my_dict[key + "_" + str(max(all_values_dict[key], key=all_values_dict[key].get))] = max(all_values_dict[
                                                                                                       key].values())
     return my_dict
 
@@ -47,5 +47,5 @@ def final_dict():
 for i in range(len(all_values)):
     print(f'Dict {i+1}:  {all_values[i]}')  # Just for better displaying
 print('')
-print('Dictionary with all value for key:', dict(all_value_dict))
+print('Dictionary with all values for key:', dict(all_values_dict))
 print('Final dictionary:', final_dict())
