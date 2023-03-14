@@ -1,9 +1,11 @@
 from datetime import datetime
-import os
 import Hometask_4_3 as Imported_file
+import pathlib
+import os
 
 
-PATH = r'C:/Python/Python-for-DQE/Hometask_6/newsfeed.txt'
+PATH = os.path.join(pathlib.Path.cwd(), 'newsfeed.txt')
+print(PATH)
 
 
 # Create parent class with parameters and methods which will be used in every child class
