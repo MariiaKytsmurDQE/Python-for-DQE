@@ -3,7 +3,6 @@ import pathlib
 import os
 from collections import Counter
 import pandas as pd
-from decimal import *
 
 
 PATH = os.path.join(pathlib.Path.cwd(), 'newsfeed.txt')
@@ -61,7 +60,7 @@ def percent_of_total_cnt(dictionary):
     new_dict = {}
     total_cnt = sum(dictionary.values())
     for letter, count in dictionary.items():
-        percent = round(Decimal(count * 100.0 / total_cnt))
+        percent = round(count * 100.0 / total_cnt, 1)
         new_dict[letter] = percent
 
     return new_dict
