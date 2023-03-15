@@ -1,0 +1,17 @@
+a = {
+    [{
+    "data_type": "News",
+    "text": "Good idea",
+    "city": "Morshyn"
+    },
+{
+    "data_type": "PrivateAd",
+    "text": "News"
+     },
+{
+    "data_type": "News",
+    "text": "News",
+    "author": "Nadiia"
+    }
+        ]
+    }
