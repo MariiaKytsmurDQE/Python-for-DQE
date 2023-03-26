@@ -1,0 +1,16 @@
+{
+	"News": [{
+		"data_type": "News",
+		"text": "Good idea",
+		"city": "Morshyn"
+	}],
+	"PrivateAd": [{
+		"data_type": "PrivateAd",
+		"text": "Buy something"
+	}],
+	"Useful Tips": [{
+		"data_type": "Useful Tips",
+		"text": "Do homework",
+		"author": "Mariia"
+	}]
+}

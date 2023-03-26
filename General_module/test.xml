@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <News>
+    <data_type>news</data_type>
+    <text_data>Good idea</text_data>
+    <city>Morshyn</city>
+  </News>
+  <PrivateAd>
+    <data_type>private_ad</data_type>
+    <text_data>Buy something</text_data>
+  </PrivateAd>
+  <Useful_Tips>
+    <data_type>useful_tips</data_type>
+    <text_data>Do homework</text_data>
+    <author>Mariia</author>
+  </Useful_Tips>
+</root>
